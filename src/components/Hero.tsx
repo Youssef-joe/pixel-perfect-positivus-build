@@ -43,25 +43,56 @@ const Hero = () => {
 
               {/* Central Megaphone */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative transform -rotate-12">
+                <div className="relative">
                   {/* Megaphone Handle */}
-                  <div className="w-3 h-20 bg-positivus-dark rounded-full absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-8 rotate-12"></div>
+                  <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2">
+                    <div className="w-4 h-16 bg-positivus-dark rounded-full"></div>
+                  </div>
                   
-                  {/* Megaphone Body */}
+                  {/* Megaphone Main Body */}
                   <div className="relative">
-                    {/* Main cone */}
-                    <div className="w-32 h-20 bg-white border-2 border-positivus-dark rounded-r-full relative overflow-hidden">
-                      {/* Green accent band */}
-                      <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-8 h-12 bg-positivus-green"></div>
-                      {/* Black accent */}
-                      <div className="absolute left-6 top-1/2 transform -translate-y-1/2 w-4 h-8 bg-positivus-dark"></div>
+                    {/* Main cone - trapezoid shape */}
+                    <div className="relative">
+                      <svg width="120" height="60" viewBox="0 0 120 60" className="overflow-visible">
+                        {/* Main cone body - white with black border */}
+                        <path 
+                          d="M20 10 L100 20 L100 40 L20 50 Z" 
+                          fill="white" 
+                          stroke="#191A23" 
+                          strokeWidth="3"
+                        />
+                        
+                        {/* Green accent stripe */}
+                        <rect 
+                          x="20" 
+                          y="22" 
+                          width="15" 
+                          height="16" 
+                          fill="#B9FF66"
+                        />
+                        
+                        {/* Black accent stripe */}
+                        <rect 
+                          x="35" 
+                          y="25" 
+                          width="8" 
+                          height="10" 
+                          fill="#191A23"
+                        />
+                      </svg>
                     </div>
                     
-                    {/* Megaphone mouth/speaker */}
-                    <div className="absolute -right-8 top-1/2 transform -translate-y-1/2">
-                      <div className="w-20 h-20 border-4 border-positivus-dark rounded-full bg-white relative">
-                        <div className="absolute inset-2 border-2 border-gray-300 rounded-full"></div>
-                        <div className="absolute inset-4 bg-positivus-green rounded-full"></div>
+                    {/* Megaphone Opening/Speaker */}
+                    <div className="absolute -right-12 top-1/2 transform -translate-y-1/2">
+                      <div className="relative">
+                        {/* Outer ring - black border */}
+                        <div className="w-24 h-24 border-4 border-positivus-dark rounded-full bg-white relative">
+                          {/* Inner ring - gray */}
+                          <div className="absolute inset-3 border-2 border-gray-300 rounded-full bg-white">
+                            {/* Center circle - green */}
+                            <div className="absolute inset-3 bg-positivus-green rounded-full"></div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
