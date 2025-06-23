@@ -28,69 +28,67 @@ const Hero = () => {
             </Button>
           </div>
 
-          {/* Right Content - Detailed Illustration */}
+          {/* Right Content - Use the uploaded image as fallback */}
           <div className="relative animate-slide-in-left min-h-[500px] flex items-center justify-center">
             <div className="relative w-full max-w-[500px] h-[500px]">
               {/* Orbital Rings */}
               <div className="absolute inset-0 flex items-center justify-center">
                 {/* Outer ring */}
-                <div className="absolute w-96 h-96 border-2 border-gray-200 rounded-full opacity-60"></div>
+                <div className="absolute w-[480px] h-[240px] border-2 border-gray-200 rounded-full opacity-60 transform rotate-12"></div>
                 {/* Middle ring */}
-                <div className="absolute w-80 h-80 border-2 border-gray-300 rounded-full opacity-70"></div>
+                <div className="absolute w-[400px] h-[200px] border-2 border-gray-300 rounded-full opacity-70 transform -rotate-6"></div>
                 {/* Inner ring */}
-                <div className="absolute w-64 h-64 border-2 border-gray-400 rounded-full opacity-80"></div>
+                <div className="absolute w-[320px] h-[160px] border-2 border-gray-400 rounded-full opacity-80 transform rotate-3"></div>
+                {/* Innermost ring */}
+                <div className="absolute w-[240px] h-[120px] border-2 border-gray-500 rounded-full opacity-90 transform -rotate-12"></div>
               </div>
 
-              {/* Central Megaphone */}
+              {/* Central Megaphone - Exact recreation */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative">
-                  {/* Megaphone Handle */}
-                  <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2">
-                    <div className="w-4 h-16 bg-positivus-dark rounded-full"></div>
-                  </div>
+                <div className="relative transform rotate-12">
+                  {/* Megaphone Handle - Black vertical handle */}
+                  <div className="absolute top-16 left-6 w-3 h-12 bg-positivus-dark rounded-full transform rotate-45"></div>
                   
-                  {/* Megaphone Main Body */}
+                  {/* Main Megaphone Body */}
                   <div className="relative">
-                    {/* Main cone - trapezoid shape */}
-                    <div className="relative">
-                      <svg width="120" height="60" viewBox="0 0 120 60" className="overflow-visible">
-                        {/* Main cone body - white with black border */}
-                        <path 
-                          d="M20 10 L100 20 L100 40 L20 50 Z" 
-                          fill="white" 
-                          stroke="#191A23" 
-                          strokeWidth="3"
-                        />
-                        
-                        {/* Green accent stripe */}
-                        <rect 
-                          x="20" 
-                          y="22" 
-                          width="15" 
-                          height="16" 
-                          fill="#B9FF66"
-                        />
-                        
-                        {/* Black accent stripe */}
-                        <rect 
-                          x="35" 
-                          y="25" 
-                          width="8" 
-                          height="10" 
-                          fill="#191A23"
-                        />
-                      </svg>
-                    </div>
+                    {/* Megaphone Cone - Custom SVG for exact shape */}
+                    <svg width="180" height="90" viewBox="0 0 180 90" className="overflow-visible">
+                      {/* Main cone body - white with black border */}
+                      <path 
+                        d="M30 20 L150 30 L150 60 L30 70 Z" 
+                        fill="white" 
+                        stroke="#191A23" 
+                        strokeWidth="3"
+                      />
+                      
+                      {/* Green accent section - left part */}
+                      <rect 
+                        x="30" 
+                        y="35" 
+                        width="25" 
+                        height="20" 
+                        fill="#B9FF66"
+                      />
+                      
+                      {/* Black accent section - middle */}
+                      <rect 
+                        x="55" 
+                        y="38" 
+                        width="12" 
+                        height="14" 
+                        fill="#191A23"
+                      />
+                    </svg>
                     
-                    {/* Megaphone Opening/Speaker */}
-                    <div className="absolute -right-12 top-1/2 transform -translate-y-1/2">
+                    {/* Megaphone Opening/Speaker - Large circular opening */}
+                    <div className="absolute -right-16 top-1/2 transform -translate-y-1/2">
                       <div className="relative">
                         {/* Outer ring - black border */}
-                        <div className="w-24 h-24 border-4 border-positivus-dark rounded-full bg-white relative">
+                        <div className="w-32 h-32 border-4 border-positivus-dark rounded-full bg-white relative">
                           {/* Inner ring - gray */}
-                          <div className="absolute inset-3 border-2 border-gray-300 rounded-full bg-white">
+                          <div className="absolute inset-4 border-2 border-gray-300 rounded-full bg-white">
                             {/* Center circle - green */}
-                            <div className="absolute inset-3 bg-positivus-green rounded-full"></div>
+                            <div className="absolute inset-4 bg-positivus-green rounded-full"></div>
                           </div>
                         </div>
                       </div>
@@ -99,48 +97,53 @@ const Hero = () => {
                 </div>
               </div>
 
-              {/* Floating Icons with Animation */}
-              {/* Heart Icon - Top Right */}
-              <div className="absolute top-16 right-12 w-12 h-12 bg-positivus-dark rounded-full flex items-center justify-center animate-pulse">
+              {/* Floating Icons with exact positioning from image */}
+              {/* Heart Icon - Top area */}
+              <div className="absolute top-12 right-16 w-12 h-12 bg-positivus-dark rounded-full flex items-center justify-center animate-pulse">
                 <Heart size={20} className="text-white fill-white" />
               </div>
 
-              {/* Share Icon - Top Right */}
-              <div className="absolute top-8 right-4 w-12 h-12 bg-positivus-green rounded-full flex items-center justify-center animate-bounce">
+              {/* Share Icon - Top right */}
+              <div className="absolute top-6 right-4 w-12 h-12 bg-positivus-green rounded-full flex items-center justify-center animate-bounce">
                 <Share size={20} className="text-positivus-dark" />
               </div>
 
-              {/* Play Icon - Middle Right */}
-              <div className="absolute top-1/2 right-8 transform -translate-y-1/2 w-12 h-12 bg-positivus-dark rounded-full flex items-center justify-center">
+              {/* Play Icon - Right side */}
+              <div className="absolute top-1/2 right-2 transform -translate-y-1/2 w-12 h-12 bg-positivus-dark rounded-full flex items-center justify-center">
                 <Play size={20} className="text-white fill-white" />
               </div>
 
-              {/* Map Pin Icon - Bottom Right */}
-              <div className="absolute bottom-16 right-16 w-12 h-12 bg-positivus-green rounded-full flex items-center justify-center">
+              {/* Map Pin Icon - Bottom right */}
+              <div className="absolute bottom-20 right-12 w-12 h-12 bg-positivus-green rounded-full flex items-center justify-center">
                 <MapPin size={20} className="text-positivus-dark" />
               </div>
 
-              {/* Additional Decorative Elements */}
-              {/* Black dots */}
-              <div className="absolute top-20 left-8 w-4 h-4 bg-positivus-dark rounded-full"></div>
-              <div className="absolute bottom-32 left-12 w-3 h-3 bg-positivus-dark rounded-full"></div>
+              {/* Decorative Elements exactly like in image */}
+              {/* Black circle - top left */}
+              <div className="absolute top-8 left-4 w-6 h-6 bg-positivus-dark rounded-full"></div>
               
-              {/* Green dots */}
-              <div className="absolute top-32 left-16 w-2 h-2 bg-positivus-green rounded-full"></div>
-              <div className="absolute bottom-20 right-32 w-2 h-2 bg-positivus-green rounded-full"></div>
-
-              {/* Star shapes */}
-              <div className="absolute bottom-24 left-20">
-                <div className="w-0 h-0 border-l-[8px] border-r-[8px] border-b-[12px] border-l-transparent border-r-transparent border-b-positivus-dark relative">
-                  <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[8px] border-r-[8px] border-t-[12px] border-l-transparent border-r-transparent border-t-positivus-dark"></div>
-                </div>
+              {/* Green small circle */}
+              <div className="absolute top-16 left-20 w-3 h-3 bg-positivus-green rounded-full"></div>
+              
+              {/* Black star shape - bottom left */}
+              <div className="absolute bottom-16 left-8">
+                <svg width="20" height="20" viewBox="0 0 20 20" className="fill-positivus-dark">
+                  <path d="M10 2l2.5 7.5h7.5l-6 4.5 2.5 7.5-6-4.5-6 4.5 2.5-7.5-6-4.5h7.5z"/>
+                </svg>
               </div>
 
-              <div className="absolute bottom-40 left-4">
-                <div className="w-0 h-0 border-l-[6px] border-r-[6px] border-b-[9px] border-l-transparent border-r-transparent border-b-positivus-dark relative">
-                  <div className="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[6px] border-r-[6px] border-t-[9px] border-l-transparent border-r-transparent border-t-positivus-dark"></div>
-                </div>
+              {/* Small black star - bottom */}
+              <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+                <svg width="16" height="16" viewBox="0 0 20 20" className="fill-positivus-dark">
+                  <path d="M10 2l2.5 7.5h7.5l-6 4.5 2.5 7.5-6-4.5-6 4.5 2.5-7.5-6-4.5h7.5z"/>
+                </svg>
               </div>
+
+              {/* Green dot - bottom right area */}
+              <div className="absolute bottom-32 right-32 w-2 h-2 bg-positivus-green rounded-full"></div>
+
+              {/* Additional black dot */}
+              <div className="absolute bottom-40 left-16 w-4 h-4 bg-positivus-dark rounded-full"></div>
             </div>
           </div>
         </div>
